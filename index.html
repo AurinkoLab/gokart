@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AurinkoLab Ry - Solar Go-Karts by Teens | Espoo, Finland</title>
+    <meta name="description" content="Experience eco-friendly solar go-kart rentals (15€/15min) and purchase complete karts (1670€). Educational workshops led by teen engineers in Espoo Mankka, Finland.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="AurinkoLab Ry - Solar Go-Karts by Teens">
+    <meta property="og:description" content="Experience eco-friendly solar go-kart rentals and educational workshops led by teen engineers in Espoo, Finland.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aurinkolab.fi">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: hsl(158, 64%, 52%);
+            --primary-dark: hsl(158, 64%, 42%);
+            --secondary: hsl(217, 91%, 60%);
+            --secondary-dark: hsl(217, 91%, 50%);
+            --accent: hsl(43, 96%, 56%);
+            --accent-dark: hsl(43, 96%, 46%);
+            --background: hsl(0, 0%, 100%);
+            --foreground: hsl(222, 84%, 4.9%);
+            --muted: hsl(210, 40%, 98%);
+            --border: hsl(214, 32%, 91%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .language-select {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .book-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .book-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=800') center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #1e293b;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.125rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .icon-primary { background: var(--primary); }
+        .icon-secondary { background: var(--secondary); }
+        .icon-accent { background: var(--accent); }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .feature-description {
+            color: #64748b;
+            text-align: center;
+        }
+
+        /* Pricing */
+        .pricing-card {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .price-period {
+            font-size: 1.125rem;
+            color: #64748b;
+            margin-left: 0.5rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-features li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background: white;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .time-slot {
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .time-slot:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .time-slot.selected {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: #cbd5e1;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .bg-muted { background: var(--muted); }
+        .text-center { text-align: center; }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">AurinkoLab Ry</a>
+                <nav class="nav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#rentals" class="nav-link">Rentals</a>
+                    <a href="#sales" class="nav-link">Sales</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <select class="language-select" id="languageSelect">
+                        <option value="en">🇬🇧 EN</option>
+                        <option value="fi">🇫🇮 FI</option>
+                    </select>
+                    <button class="book-btn" onclick="openBookingModal()">Book Now</button>
+                </nav>
+                <button class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Drive the Future with <span style="color: var(--accent);">Solar Power</span></h1>
+            <p>Experience eco-friendly go-karting while learning sustainable engineering. Built by teens, for everyone.</p>
+            <div class="hero-buttons">
+                <a href="#rentals" class="btn-primary">Rent a Go-Kart</a>
+                <a href="#education" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Solar Go-Karts?</h2>
+            <p class="section-subtitle">Experience the thrill of racing while supporting sustainable technology and youth innovation.</p>
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="feature-icon icon-primary">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">100% Solar Powered</h3>
+                    <p class="feature-description">Zero emissions, maximum fun. Our go-karts run entirely on clean solar energy.</p>
+                </div>
+                <div class="card">
+                    <div class="feature-icon icon-secondary">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Teen-Led Innovation</h3>
+                    <p class="feature-description">Built and designed by talented young engineers passionate about sustainability.</p>
+                </div>
+                <div class="card">
+                    <div class="feature-icon icon-accent">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="feature-title">Educational Experience</h3>
+                    <p class="feature-description">Learn about renewable energy, engineering, and sustainability while having fun.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rentals Section -->
+    <section id="rentals" class="section bg-muted">
+        <div class="container">
+            <h2 class="section-title">Rental Booking</h2>
+            <p class="section-subtitle">Book your solar go-kart experience today. No phone calls or emails required!</p>
+            <div class="grid grid-2">
+                <div class="pricing-card">
+                    <h3 class="mb-4" style="font-size: 1.5rem; font-weight: bold;">Rental Pricing</h3>
+                    <div class="mb-4">
+                        <span class="price">15€</span>
+                        <span class="price-period">per 15 minutes</span>
+                    </div>
+                    <p class="mb-4" style="color: #64748b;">Perfect for a quick eco-friendly adventure</p>
+                    <ul class="price-features">
+                        <li>Safety equipment included</li>
+                        <li>Brief solar tech explanation</li>
+                        <li>Track access in Espoo Mankka</li>
+                        <li>Age 12+ (with adult supervision)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="mb-4" style="font-size: 1.5rem; font-weight: bold;">Select Date & Time</h3>
+                    <form id="rentalForm">
+                        <div class="form-group">
+                            <label class="form-label">Date</label>
+                            <input type="date" class="form-input" id="rentalDate" required>
+                        </div>
+                        <div class="form-group" id="timeSlotsSection" style="display: none;">
+                            <label class="form-label">Available Time Slots</label>
+                            <div class="time-slots" id="timeSlots"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-input" placeholder="+358 XX XXX XXXX" required>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">Book for 15€</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Section -->
+    <section id="sales" class="section">
+        <div class="container">
+            <h2 class="section-title">Own a Solar Go-Kart</h2>
+            <p class="section-subtitle">Take home your own piece of sustainable innovation. Perfect for educational institutions, events, or personal use.</p>
+            <div class="grid grid-2">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Young engineers with solar go-kart" 
+                         style="border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; height: auto;">
+                </div>
+                <div class="card">
+                    <h3 class="text-center mb-4" style="font-size: 1.875rem; font-weight: bold;">Complete Solar Go-Kart</h3>
+                    <div class="text-center mb-4">
+                        <span class="price">1,670€</span>
+                    </div>
+                    <p class="text-center mb-4" style="color: #64748b;">Ready-to-drive, educational, and sustainable</p>
+                    <ul class="price-features">
+                        <li><strong>Complete Solar System:</strong> High-efficiency solar panels, battery storage, electric motor</li>
+                        <li><strong>Safety Features:</strong> Roll cage, seat belts, emergency braking system</li>
+                        <li><strong>Educational Materials:</strong> Technical documentation, curriculum guides, maintenance manual</li>
+                        <li><strong>Support & Training:</strong> Setup assistance, operation training, ongoing support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem; text-align: center;">Contact for Purchase</a>
+                    <p class="text-center mt-4" style="font-size: 0.875rem; color: #64748b;">Custom configurations available for educational institutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-muted">
+        <div class="container">
+            <h2 class="section-title">Educational Services</h2>
+            <p class="section-subtitle">Learn from passionate teen engineers and explore the future of sustainable technology through hands-on education.</p>
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="text-center mb-4">
+                        <div class="feature-icon icon-secondary">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Solar Engineering Masterclass</h3>
+                        <p style="color: #64748b; margin-bottom: 1.5rem;">Deep dive into photovoltaic systems, energy storage, and electric vehicle design principles.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #64748b;">
+                            <i class="fas fa-clock" style="margin-right: 0.5rem;"></i>
+                            Duration: 4 hours
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #64748b;">
+                            <i class="fas fa-users" style="margin-right: 0.5rem;"></i>
+                            Max 12 participants
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #64748b;">
+                            <i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>
+                            Age 14+
+                        </div>
+                    </div>
+                    <button onclick="setServiceType('masterclass')" style="width: 100%; padding: 0.75rem; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; background: var(--secondary); color: white; transition: background 0.3s;">Request Masterclass</button>
+                </div>
+                <div class="card">
+                    <div class="text-center mb-4">
+                        <div class="feature-icon icon-accent">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Hands-On Engineering Workshop</h3>
+                        <p style="color: #64748b; margin-bottom: 1.5rem;">Build, test, and race your own mini solar-powered vehicle with expert teen mentors.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #64748b;">
+                            <i class="fas fa-clock" style="margin-right: 0.5rem;"></i>
+                            Duration: 6 hours (2 days)
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #64748b;">
+                            <i class="fas fa-users" style="margin-right: 0.5rem;"></i>
+                            Max 8 participants
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 0.75rem; color: #64748b;">
+                            <i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>
+                            Age 12+
+                        </div>
+                    </div>
+                    <button onclick="setServiceType('workshop')" style="width: 100%; padding: 0.75rem; border: none; border-radius: 0.5rem; font-weight: 600; cursor: pointer; background: var(--accent); color: white; transition: background 0.3s;">Request Workshop</button>
+                </div>
+            </div>
+            
+            <div class="card" style="max-width: 600px; margin: 3rem auto 0;">
+                <h3 class="text-center mb-4" style="font-size: 1.5rem; font-weight: bold;">Request Educational Services</h3>
+                <form id="educationForm">
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Organization/School</label>
+                            <input type="text" class="form-input" placeholder="Enter organization name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Contact Person</label>
+                            <input type="text" class="form-input" placeholder="Your full name" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" placeholder="contact@organization.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-input" placeholder="+358 XX XXX XXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Service Type</label>
+                        <select class="form-select" id="serviceType" required>
+                            <option value="">Select service type</option>
+                            <option value="masterclass">Solar Engineering Masterclass</option>
+                            <option value="workshop">Hands-On Engineering Workshop</option>
+                            <option value="custom">Custom Educational Program</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Number of Participants</label>
+                        <input type="number" class="form-input" placeholder="Expected number of students">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Dates</label>
+                        <textarea class="form-input form-textarea" placeholder="Let us know your preferred dates and any scheduling requirements"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Additional Information</label>
+                        <textarea class="form-input form-textarea" placeholder="Tell us about your educational goals, student age range, and any special requirements"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1.125rem;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Teen Innovation Gallery</h2>
+            <p class="section-subtitle">Explore the amazing solar go-karts designed and built by our talented young engineers.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Teens installing solar panels on go-kart">
+                    <div class="gallery-overlay">
+                        <h4 style="font-weight: 600;">Solar Panel Integration</h4>
+                        <p>Team Alpha - 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Modern solar go-kart on track">
+                    <div class="gallery-overlay">
+                        <h4 style="font-weight: 600;">Racing Edition</h4>
+                        <p>Team Beta - 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Teens celebrating with completed go-kart">
+                    <div class="gallery-overlay">
+                        <h4 style="font-weight: 600;">Team Celebration</h4>
+                        <p>Project Completion - 2024</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Advanced workshop with renewable energy tools">
+                    <div class="gallery-overlay">
+                        <h4 style="font-weight: 600;">Innovation Workshop</h4>
+                        <p>AurinkoLab Facilities</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Solar panel installation under blue sky">
+                    <div class="gallery-overlay">
+                        <h4 style="font-weight: 600;">Solar Technology</h4>
+                        <p>Clean Energy Focus</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Students in engineering workshop">
+                    <div class="gallery-overlay">
+                        <h4 style="font-weight: 600;">Educational Workshop</h4>
+                        <p>Learning by Doing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-muted">
+        <div class="container">
+            <h2 class="section-title">About AurinkoLab Ry</h2>
+            <p class="section-subtitle">Empowering the next generation of sustainable innovators through hands-on solar technology education.</p>
+            <div class="grid grid-2">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                         alt="Teens presenting solar engineering projects" 
+                         style="border-radius: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; height: auto;">
+                </div>
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Our Mission</h3>
+                    <p style="color: #64748b; margin-bottom: 1.5rem; line-height: 1.8;">
+                        AurinkoLab Ry is a Finnish non-profit organization dedicated to fostering innovation in sustainable technology through youth-led engineering projects. Our passionate team of teenage engineers designs, builds, and operates solar-powered go-karts while sharing their knowledge with the community.
+                    </p>
+                    <p style="color: #64748b; margin-bottom: 1.5rem; line-height: 1.8;">
+                        Founded on the belief that young minds can drive the future of clean energy, we combine education, innovation, and fun to create meaningful learning experiences that inspire the next generation of environmental leaders.
+                    </p>
+                    <div class="grid grid-2">
+                        <div class="text-center">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">50+</div>
+                            <div style="color: #64748b;">Students Trained</div>
+                        </div>
+                        <div class="text-center">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">12</div>
+                            <div style="color: #64748b;">Go-Karts Built</div>
+                        </div>
+                        <div class="text-center">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">5</div>
+                            <div style="color: #64748b;">Schools Partnered</div>
+                        </div>
+                        <div class="text-center">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--primary); margin-bottom: 0.5rem;">2022</div>
+                            <div style="color: #64748b;">Established</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-3" style="margin-top: 4rem;">
+                <div class="text-center">
+                    <div class="feature-icon icon-primary">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="feature-title">Sustainability</h3>
+                    <p class="feature-description">Committed to clean energy solutions and environmental responsibility in all our projects.</p>
+                </div>
+                <div class="text-center">
+                    <div class="feature-icon icon-secondary">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Innovation</h3>
+                    <p class="feature-description">Encouraging creative problem-solving and cutting-edge thinking in renewable energy.</p>
+                </div>
+                <div class="text-center">
+                    <div class="feature-icon icon-accent">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Youth Leadership</h3>
+                    <p class="feature-description">Empowering teenagers to lead, innovate, and inspire others through hands-on engineering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact & Location</h2>
+            <p class="section-subtitle">Visit us in Espoo Mankka, Finland, or get in touch to learn more about our solar innovation programs.</p>
+            <div class="grid grid-2">
+                <div>
+                    <div class="card mb-4">
+                        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Get in Touch</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <div style="width: 2.5rem; height: 2.5rem; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Location</h4>
+                                    <p style="color: #64748b; margin: 0;">Mankka, Espoo, Finland</p>
+                                    <p style="color: #64748b; font-size: 0.875rem; margin: 0;">02180 Espoo</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <div style="width: 2.5rem; height: 2.5rem; background: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                    <i class="fas fa-envelope" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Email</h4>
+                                    <p style="color: #64748b; margin: 0;">info@aurinkolab.fi</p>
+                                    <p style="color: #64748b; margin: 0;">education@aurinkolab.fi</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+                                <div style="width: 2.5rem; height: 2.5rem; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                    <i class="fas fa-phone" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Phone</h4>
+                                    <p style="color: #64748b; margin: 0;">+358 50 123 4567</p>
+                                    <p style="color: #64748b; font-size: 0.875rem; margin: 0;">Monday - Friday, 9:00 - 17:00</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start;">
+                                <div style="width: 2.5rem; height: 2.5rem; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                    <i class="fas fa-clock" style="color: white;"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 0.25rem;">Operating Hours</h4>
+                                    <p style="color: #64748b; margin: 0;">Rentals: Tue-Sun, 10:00-18:00</p>
+                                    <p style="color: #64748b; margin: 0;">Workshops: By appointment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem;">Quick Contact</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-input form-textarea" placeholder="Your message..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%; padding: 0.75rem;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div>
+                    <div style="background: #e2e8f0; border-radius: 1rem; height: 400px; display: flex; align-items: center; justify-content: center; color: #64748b;">
+                        <div class="text-center">
+                            <i class="fas fa-map-marker-alt" style="font-size: 4rem; margin-bottom: 1rem;"></i>
+                            <p style="font-size: 1.125rem; font-weight: 600;">Interactive Map</p>
+                            <p>Mankka, Espoo, Finland</p>
+                            <p style="font-size: 0.875rem; margin-top: 0.5rem;">Click to view directions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-title">AurinkoLab Ry</h3>
+                    <p style="color: #cbd5e1; margin-bottom: 1rem; max-width: 300px;">
+                        Empowering youth through sustainable innovation. Building the future of clean energy, one solar go-kart at a time.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#rentals">Rent Go-Kart</a></li>
+                        <li><a href="#sales">Purchase</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 AurinkoLab Ry. All rights reserved. | Registered Non-Profit Organization in Finland</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            <h3 class="modal-title">Quick Booking</h3>
+            <div class="text-center mb-4">
+                <span class="price">15€</span>
+                <span class="price-period">per 15 minutes</span>
+                <p style="color: #64748b; margin-top: 0.5rem;">Select your preferred time slot</p>
+            </div>
+            <form id="modalBookingForm">
+                <div class="form-group">
+                    <label class="form-label">Date</label>
+                    <input type="date" class="form-input" id="modalDate" required>
+                </div>
+                <div class="form-group" id="modalTimeSlotsSection" style="display: none;">
+                    <label class="form-label">Available Time Slots</label>
+                    <div class="time-slots" id="modalTimeSlots"></div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Phone</label>
+                    <input type="tel" class="form-input" placeholder="+358 XX XXX XXXX" required>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="submit" class="btn-primary" style="flex: 1;">Book for 15€</button>
+                    <button type="button" onclick="closeBookingModal()" style="padding: 0.75rem 1.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem; background: white; cursor: pointer;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('rentalDate').min = today;
+        document.getElementById('modalDate').min = today;
+
+        // Available time slots
+        const availableSlots = [
+            "10:00 - 10:15", "10:30 - 10:45", "11:00 - 11:15", "11:30 - 11:45",
+            "12:00 - 12:15", "12:30 - 12:45", "14:00 - 14:15", "14:30 - 14:45",
+            "15:00 - 15:15", "15:30 - 15:45", "16:00 - 16:15", "16:30 - 16:45",
+            "17:00 - 17:15", "17:30 - 17:45"
+        ];
+
+        let selectedSlot = null;
+        let modalSelectedSlot = null;
+
+        // Handle date selection for main form
+        document.getElementById('rentalDate').addEventListener('change', function() {
+            const date = this.value;
+            if (date) {
+                showTimeSlots('timeSlots', 'timeSlotsSection');
+            }
+        });
+
+        // Handle date selection for modal
+        document.getElementById('modalDate').addEventListener('change', function() {
+            const date = this.value;
+            if (date) {
+                showTimeSlots('modalTimeSlots', 'modalTimeSlotsSection');
+            }
+        });
+
+        function showTimeSlots(containerId, sectionId) {
+            const container = document.getElementById(containerId);
+            const section = document.getElementById(sectionId);
+            
+            container.innerHTML = '';
+            availableSlots.forEach(slot => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'time-slot';
+                button.textContent = slot;
+                button.onclick = () => selectTimeSlot(button, slot, containerId === 'modalTimeSlots');
+                container.appendChild(button);
+            });
+            
+            section.style.display = 'block';
+        }
+
+        function selectTimeSlot(button, slot, isModal) {
+            const container = isModal ? document.getElementById('modalTimeSlots') : document.getElementById('timeSlots');
+            
+            // Remove selected class from all slots in this container
+            container.querySelectorAll('.time-slot').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked slot
+            button.classList.add('selected');
+            
+            if (isModal) {
+                modalSelectedSlot = slot;
+            } else {
+                selectedSlot = slot;
+            }
+        }
+
+        // Form submissions
+        document.getElementById('rentalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (!selectedSlot) {
+                alert('Please select a time slot');
+                return;
+            }
+            alert('Booking submitted successfully! We will contact you soon to confirm your rental.');
+            this.reset();
+            document.getElementById('timeSlotsSection').style.display = 'none';
+            selectedSlot = null;
+        });
+
+        document.getElementById('modalBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (!modalSelectedSlot) {
+                alert('Please select a time slot');
+                return;
+            }
+            alert('Booking submitted successfully! We will contact you soon to confirm your rental.');
+            closeBookingModal();
+        });
+
+        document.getElementById('educationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Educational service request submitted successfully! We will contact you within 24 hours.');
+            this.reset();
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Message sent successfully! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Modal functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.add('active');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.remove('active');
+            document.getElementById('modalBookingForm').reset();
+            document.getElementById('modalTimeSlotsSection').style.display = 'none';
+            modalSelectedSlot = null;
+        }
+
+        // Service type selection
+        function setServiceType(type) {
+            document.getElementById('serviceType').value = type;
+            document.getElementById('serviceType').focus();
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Language switcher (basic implementation)
+        document.getElementById('languageSelect').addEventListener('change', function() {
+            // In a real implementation, this would switch the language
+            console.log('Language changed to:', this.value);
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBookingModal();
+            }
+        });
+    </script>
+</body>
+</html>
